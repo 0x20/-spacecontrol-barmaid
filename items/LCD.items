@@ -1,0 +1,6 @@
+Switch LCD		"LCD"		(group)	{ exec="ON:/bin/sh@@-c@@/usr/bin/whoami > /tmp/test" }
+Switch LCDtest		"LCD-test" 	(group) { exec="ON:/bin/sh@@-c@@/home/whitespace/LCD -s 'Dit is een test via openhab!!!'" }
+Switch LCDclear		"LCD-clear"	(group) { exec="ON:/bin/sh@@-c@@/home/whitespace/LCD -c" }
+String LCDtext		"LCD-text"	(group) { exec=">[*:/bin/sh@@-c@@/home/whitespace/LCD -s '%2$s']" }
+
+// /home/whitespace/LCD -s yesman%2$s'" }

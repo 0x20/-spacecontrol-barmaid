@@ -1,0 +1,3 @@
+Switch shutdown		"Shutdown"
+Switch Abort		"Abort"
+Switch abortShutdown	"Abort shutdown"

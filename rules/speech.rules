@@ -1,0 +1,42 @@
+rule Startup
+when
+	System started
+then
+	say("Welcome to 0x20")
+	sendCommand(shutdown, OFF)
+end
+
+rule "Shutdown sequence aborted"
+when
+	Item abortShutdown changed from OFF to ON
+then
+	say("Shutdown sequence aborted")
+end
+
+rule "Start shutdown sequence"
+when
+	Item shutdown changed from OFF to ON
+then
+	say("Shutdown sequence initiated")
+	sendCommand(shutdown, OFF)
+	Thread::sleep(1000)
+	say("TEN")
+        Thread::sleep(1000)
+        say("NINE")
+        Thread::sleep(1000)
+        say("EIGHT")
+        Thread::sleep(1000)
+        say("SEVEN")
+        Thread::sleep(1000)
+        say("SIX")
+        Thread::sleep(1000)
+        say("FIVE")
+        Thread::sleep(1000)
+        say("FOUR")
+        Thread::sleep(1000)
+        say("THREE")
+        Thread::sleep(1000)
+        say("TWO")
+        Thread::sleep(1000)
+        say("ONE")
+end
